@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="Consignado"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="3">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="Consignado"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
+              <TrashVariables Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="Consignado"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item3>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages Count="5">
+      <Item1>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="frce"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="zcomponent"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
+    </RequiredPackages>
+    <Units Count="28">
+      <Unit0>
+        <Filename Value="Consignado.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UMain"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ufrmfaturaprocurar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmFaturaProcurar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmFaturaProcurar"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="ufuncoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uFuncoes"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="ufrmprodutoprocurar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmProdutoProcurar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmProdutoProcurar"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ufrmestorno.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmEstorno"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmEstorno"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uconstantes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UConstantes"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="ureport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmReport"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="uconfiguration.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UConfiguration"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ureportfaturapendentes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmReportFaturasPendentes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ureportFaturaPendentes"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="ufrmlogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmLogin"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="ufrmprodutoadicionar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmProdutoAdicionar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="ufrmclienteprocurar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmClienteProcurar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="ureportfaturasnaoestornadas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmReportFaturasNEstornadas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ureportFaturasNaoEstornadas"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="ufrmnotavenda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmNotaVenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFrmNotaVenda"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="uestruturadados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UEstruturaDados"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="ufrmintegerinput.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmIntegerInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFrmIntegerInput"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="UFrmStringInput.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmStringInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="ufrmcadprodutos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadProdutos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmCadProdutos"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="ufrmcadclientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadCli"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmCadClientes"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="ufrmusuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsuarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UfrmUsuarios"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="ufrmusuarioedit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsuarioEditar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmusuarioEdit"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="ufrmusuariosenha.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsuarioSenha"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UfrmUsuarioSenha"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="ufaturas.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="ufaturaitens.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="uprodutos.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="ucliente.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit27>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Consignado"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

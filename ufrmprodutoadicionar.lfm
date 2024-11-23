@@ -1,0 +1,238 @@
+object frmProdutoAdicionar: TfrmProdutoAdicionar
+  Left = 351
+  Height = 259
+  Top = 198
+  Width = 625
+  Caption = 'Adicionar/Alterar produto'
+  ClientHeight = 259
+  ClientWidth = 625
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 33
+    Caption = 'Fatura'
+  end
+  object edtFatura: TEdit
+    Left = 48
+    Height = 23
+    Top = 8
+    Width = 80
+    Enabled = False
+    TabStop = False
+    TabOrder = 4
+  end
+  object Label6: TLabel
+    Left = 160
+    Height = 15
+    Top = 8
+    Width = 37
+    Caption = 'Cliente'
+  end
+  object edtClienteNome: TEdit
+    Left = 208
+    Height = 23
+    Top = 8
+    Width = 272
+    Enabled = False
+    TabStop = False
+    TabOrder = 3
+  end
+  object btnSalvar: TButton
+    Left = 461
+    Height = 25
+    Top = 224
+    Width = 75
+    Caption = 'Salvar'
+    OnClick = btnSalvarClick
+    TabOrder = 0
+  end
+  object btnFechar: TButton
+    Left = 541
+    Height = 25
+    Top = 224
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 1
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 176
+    Top = 40
+    Width = 608
+    ClientHeight = 156
+    ClientWidth = 604
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 9
+      Width = 43
+      Caption = 'Produto'
+    end
+    object edtProdutoCod: TEdit
+      Left = 104
+      Height = 23
+      Top = 9
+      Width = 80
+      OnChange = edtProdutoCodChange
+      OnKeyDown = edtProdutoCodKeyDown
+      OnKeyPress = edtProdutoCodKeyPress
+      TabOrder = 0
+    end
+    object btnProdutoProcurar: TSpeedButton
+      Left = 184
+      Height = 24
+      Top = 8
+      Width = 23
+      Caption = '...'
+      OnClick = btnProdutoProcurarClick
+    end
+    object edtProdutoNome: TEdit
+      Left = 208
+      Height = 23
+      Top = 9
+      Width = 272
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 70
+      Caption = 'Qtde Enviada'
+    end
+    object Label3: TLabel
+      Left = 216
+      Height = 15
+      Top = 40
+      Width = 83
+      Caption = 'Qtde Retornada'
+    end
+    object edtQtdeEnviada: TEdit
+      Left = 104
+      Height = 23
+      Top = 40
+      Width = 80
+      OnExit = edtQtdeEnviadaExit
+      OnKeyDown = edtQtdeEnviadaKeyDown
+      OnKeyPress = edtProdutoCodKeyPress
+      TabOrder = 2
+    end
+    object edtQtdeRetornada: TEdit
+      Left = 312
+      Height = 23
+      Top = 40
+      Width = 80
+      OnExit = edtQtdeRetornadaExit
+      OnKeyDown = edtQtdeRetornadaKeyDown
+      OnKeyPress = edtProdutoCodKeyPress
+      TabOrder = 3
+      Text = '0'
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 15
+      Top = 72
+      Width = 71
+      Caption = 'Valor Unitário'
+    end
+    object edtValorUnitario: TEdit
+      Left = 104
+      Height = 23
+      Top = 72
+      Width = 80
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 4
+    end
+    object edtValorTotal: TEdit
+      Left = 104
+      Height = 23
+      Top = 104
+      Width = 80
+      OnExit = edtValorTotalExit
+      OnKeyDown = edtValorTotalKeyDown
+      OnKeyPress = edtProdutoCodKeyPress
+      TabOrder = 5
+    end
+    object Label7: TLabel
+      Left = 8
+      Height = 15
+      Top = 104
+      Width = 54
+      Caption = 'Valor Total'
+    end
+    object Label8: TLabel
+      Left = 216
+      Height = 15
+      Top = 104
+      Width = 84
+      Caption = 'Valor Retornado'
+    end
+    object edtValorRetornado: TEdit
+      Left = 312
+      Height = 23
+      Top = 104
+      Width = 80
+      OnExit = edtValorTotalExit
+      OnKeyPress = edtProdutoCodKeyPress
+      TabOrder = 6
+    end
+    object edtQtdeCobrada: TEdit
+      Left = 512
+      Height = 23
+      Top = 40
+      Width = 80
+      Enabled = False
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 7
+    end
+    object Label9: TLabel
+      Left = 416
+      Height = 15
+      Top = 40
+      Width = 74
+      Caption = 'Qtde Cobrada'
+    end
+    object Label10: TLabel
+      Left = 416
+      Height = 15
+      Top = 104
+      Width = 75
+      Caption = 'Valor Cobrado'
+    end
+    object edtValorCobrado: TEdit
+      Left = 512
+      Height = 23
+      Top = 104
+      Width = 80
+      Enabled = False
+      OnExit = edtValorTotalExit
+      OnKeyPress = edtProdutoCodKeyPress
+      TabOrder = 8
+    end
+  end
+  object actions: TActionList
+    Left = 496
+    Top = 8
+    object actSair: TAction
+      Caption = 'actSair'
+      OnExecute = actSairExecute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+    object actProcurar: TAction
+      Caption = 'actProcurar'
+      OnExecute = actProcurarExecute
+      ShortCut = 115
+    end
+  end
+end

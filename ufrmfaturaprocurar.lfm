@@ -1,0 +1,109 @@
+object frmFaturaProcurar: TfrmFaturaProcurar
+  Left = 161
+  Height = 345
+  Top = 105
+  Width = 1002
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Procurar Fatura'
+  ClientHeight = 345
+  ClientWidth = 1002
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object grid: TDBGrid
+    Left = 8
+    Height = 300
+    Top = 8
+    Width = 984
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Número'
+        Width = 70
+        FieldName = 'FATURA'
+      end    
+      item
+        Title.Caption = 'Dt. Emissão'
+        Width = 84
+        FieldName = 'DT_EMISSAO'
+      end    
+      item
+        Title.Caption = 'Cli.Cod'
+        Width = 56
+        FieldName = 'cliente'
+      end    
+      item
+        Title.Caption = 'Cliente'
+        Width = 275
+        FieldName = 'cliente_nome'
+      end    
+      item
+        Title.Caption = 'Valor Entregue'
+        Width = 84
+        FieldName = 'VALOR_FATURA'
+        DisplayFormat = '####.##0'
+      end    
+      item
+        Title.Caption = 'Vlr Ret'
+        Width = 84
+        FieldName = 'VALOR_RETORNADO'
+        DisplayFormat = '####.##0'
+      end    
+      item
+        Title.Caption = 'Pct.'
+        Width = 50
+        FieldName = 'pct'
+        DisplayFormat = '###.#0'
+      end    
+      item
+        Title.Caption = 'Itens'
+        Width = 84
+        FieldName = 'QTDE_ITENS'
+      end    
+      item
+        Title.Caption = 'Sit.'
+        Width = 120
+        FieldName = 'SITUACAO'
+      end>
+    DataSource = dsDados
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    OnDblClick = gridDblClick
+    OnKeyDown = gridKeyDown
+    OnKeyPress = gridKeyPress
+  end
+  object btnFechar: TButton
+    Left = 917
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 1
+  end
+  object btnMostrarTodos: TButton
+    Left = 816
+    Height = 25
+    Top = 312
+    Width = 99
+    Caption = 'Mostrar Todos'
+    OnClick = btnMostrarTodosClick
+    TabOrder = 2
+  end
+  object dsDados: TDataSource
+    DataSet = dm.qryFaturas
+    Left = 40
+    Top = 224
+  end
+  object actions: TActionList
+    Left = 728
+    Top = 8
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+  end
+end

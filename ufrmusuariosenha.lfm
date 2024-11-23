@@ -1,0 +1,100 @@
+object frmUsuarioSenha: TfrmUsuarioSenha
+  Left = 284
+  Height = 216
+  Top = 123
+  Width = 304
+  Caption = 'Alterar Senha'
+  ClientHeight = 216
+  ClientWidth = 304
+  LCLVersion = '2.2.0.4'
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 160
+    Top = 8
+    Width = 273
+    ClientHeight = 140
+    ClientWidth = 269
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 32
+      Height = 15
+      Top = 8
+      Width = 63
+      Caption = 'Senha Atual'
+    end
+    object edtSenhaAtual: TEdit
+      Left = 112
+      Height = 23
+      Top = 8
+      Width = 120
+      EchoMode = emPassword
+      OnKeyPress = edtSenhaAtualKeyPress
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 32
+      Height = 15
+      Top = 56
+      Width = 63
+      Caption = 'Nova Senha'
+    end
+    object edtNovaSenha: TEdit
+      Left = 112
+      Height = 23
+      Top = 56
+      Width = 120
+      EchoMode = emPassword
+      OnKeyPress = edtSenhaAtualKeyPress
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 32
+      Height = 28
+      Top = 84
+      Width = 72
+      AutoSize = False
+      Caption = 'Confirme a Nova Senha'
+      WordWrap = True
+    end
+    object edtConfirmacao: TEdit
+      Left = 112
+      Height = 23
+      Top = 84
+      Width = 120
+      EchoMode = emPassword
+      OnKeyPress = edtSenhaAtualKeyPress
+      PasswordChar = '*'
+      TabOrder = 2
+    end
+  end
+  object btnAtualizar: TButton
+    Left = 136
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Atualizar'
+    OnClick = btnAtualizarClick
+    TabOrder = 1
+  end
+  object btnFechar: TButton
+    Left = 214
+    Height = 25
+    Top = 177
+    Width = 75
+    Action = actFechar
+    TabOrder = 2
+  end
+  object actions: TActionList
+    Left = 199
+    Top = 110
+    object actFechar: TAction
+      Caption = 'Fechar'
+      OnExecute = actFecharExecute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+  end
+end

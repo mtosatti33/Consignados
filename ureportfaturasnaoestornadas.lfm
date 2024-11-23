@@ -1,0 +1,332 @@
+object FrmReportFaturasNEstornadas: TFrmReportFaturasNEstornadas
+  Left = 222
+  Height = 651
+  Top = 114
+  Width = 1128
+  Caption = 'FrmReportFaturasNEstornadas'
+  ClientHeight = 651
+  ClientWidth = 1128
+  LCLVersion = '2.2.0.4'
+  object FrReport: TRLReport
+    Left = 5
+    Height = 794
+    Top = 0
+    Width = 1123
+    AllowedBands = [btHeader, btTitle, btColumnHeader, btDetail]
+    DataSource = dsDados
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    PageSetup.Orientation = poLandscape
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 40
+      Top = 38
+      Width = 1047
+      BandType = btHeader
+      object RLLabel1: TRLLabel
+        Left = 368
+        Height = 22
+        Top = 8
+        Width = 316
+        Caption = 'Relatório de Faturas Não Estornadas'
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        ParentFont = False
+      end
+      object RLLabel2: TRLLabel
+        Left = 8
+        Height = 14
+        Top = 8
+        Width = 229
+        Caption = '1 - ALIPASSO DISTRIBUIDORA LTDA - MATRIZ'
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        ParentFont = False
+      end
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 912
+        Height = 16
+        Top = 8
+        Width = 39
+        Alignment = taRightJustify
+      end
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 960
+        Height = 16
+        Top = 8
+        Width = 39
+        Info = itHour
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 41
+      Top = 126
+      Width = 1047
+      BandType = btColumnHeader
+      object RLLabel7: TRLLabel
+        Left = 200
+        Height = 16
+        Top = 16
+        Width = 49
+        Caption = 'Cliente'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel8: TRLLabel
+        Left = 618
+        Height = 16
+        Top = 16
+        Width = 77
+        Caption = 'Dt. Emissão'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel9: TRLLabel
+        Left = 725
+        Height = 16
+        Top = 16
+        Width = 74
+        Caption = 'Valor Total'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel10: TRLLabel
+        Left = 823
+        Height = 16
+        Top = 16
+        Width = 108
+        Caption = 'Valor Retornado'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw1: TRLDraw
+        Left = 0
+        Height = 1
+        Top = 37
+        Width = 1044
+      end
+      object RLLabel16: TRLLabel
+        Left = 129
+        Height = 16
+        Top = 16
+        Width = 54
+        Caption = 'Cod Cli.'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel11: TRLLabel
+        Left = 521
+        Height = 16
+        Top = 16
+        Width = 34
+        Caption = 'Itens'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel17: TRLLabel
+        Left = 40
+        Height = 16
+        Top = 16
+        Width = 45
+        Caption = 'Fatura'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel12: TRLLabel
+        Left = 966
+        Height = 16
+        Top = 16
+        Width = 14
+        Caption = '%'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Height = 24
+      Top = 167
+      Width = 1047
+      object RLDBText5: TRLDBText
+        Left = 200
+        Height = 16
+        Top = 5
+        Width = 312
+        AutoSize = False
+        DataField = 'cliente_nome'
+        DataSource = dsDados
+      end
+      object RLDBText6: TRLDBText
+        Left = 618
+        Height = 16
+        Top = 5
+        Width = 87
+        DataField = 'DT_EMISSAO'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+      end
+      object RLDBText7: TRLDBText
+        Left = 725
+        Height = 16
+        Top = 5
+        Width = 107
+        AutoSize = False
+        DataField = 'VALOR_FATURA'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+      end
+      object RLDBText8: TRLDBText
+        Left = 823
+        Height = 16
+        Top = 5
+        Width = 136
+        DataField = 'VALOR_RETORNADO'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+      end
+      object RLDBText19: TRLDBText
+        Left = 128
+        Height = 16
+        Top = 5
+        Width = 57
+        DataField = 'CLIENTE'
+        DataSource = dsDados
+      end
+      object RLDBText9: TRLDBText
+        Left = 521
+        Height = 16
+        Top = 5
+        Width = 83
+        DataField = 'QTDE_ITENS'
+        DataSource = dsDados
+      end
+      object RLDBText20: TRLDBText
+        Left = 40
+        Height = 16
+        Top = 5
+        Width = 55
+        DataField = 'FATURA'
+        DataSource = dsDados
+      end
+      object RLDBText10: TRLDBText
+        Left = 966
+        Height = 16
+        Top = 5
+        Width = 22
+        DataField = 'pct'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+      end
+    end
+    object RLBand4: TRLBand
+      Left = 38
+      Height = 48
+      Top = 78
+      Width = 1047
+      BandType = btTitle
+    end
+    object RLBand5: TRLBand
+      Left = 38
+      Height = 31
+      Top = 191
+      Width = 1047
+      BandType = btColumnFooter
+      object RLDraw2: TRLDraw
+        Left = 602
+        Height = 23
+        Top = 5
+        Width = 430
+      end
+      object RLDBResult1: TRLDBResult
+        Left = 724
+        Height = 16
+        Top = 8
+        Width = 149
+        DataField = 'VALOR_FATURA'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riSum
+        ParentFont = False
+      end
+      object RLDBResult2: TRLDBResult
+        Left = 822
+        Height = 16
+        Top = 8
+        Width = 178
+        DataField = 'VALOR_RETORNADO'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riSum
+        ParentFont = False
+      end
+      object RLLabel3: TRLLabel
+        Left = 614
+        Height = 16
+        Top = 8
+        Width = 36
+        Caption = 'Total'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDBResult3: TRLDBResult
+        Left = 966
+        Height = 16
+        Top = 8
+        Width = 88
+        DataField = 'pct'
+        DataSource = dsDados
+        DisplayMask = '####.#0'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Info = riAverage
+        ParentFont = False
+      end
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = dm.qryFaturasSemEstorno
+    Left = 128
+    Top = 448
+  end
+end

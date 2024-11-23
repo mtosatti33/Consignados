@@ -1,0 +1,62 @@
+object FrmClienteProcurar: TFrmClienteProcurar
+  Left = 127
+  Height = 299
+  Top = 91
+  Width = 606
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Procurar Cliente'
+  ClientHeight = 299
+  ClientWidth = 606
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object grid: TDBGrid
+    Left = 8
+    Height = 252
+    Top = 8
+    Width = 584
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Cód'
+        Width = 70
+        FieldName = 'CODIGO'
+      end    
+      item
+        Title.Caption = 'Cliente'
+        Width = 240
+        FieldName = 'CLIENTE'
+      end>
+    DataSource = dsDados
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    OnDblClick = gridDblClick
+    OnKeyDown = gridKeyDown
+    OnKeyPress = gridKeyPress
+  end
+  object btnFechar: TButton
+    Left = 517
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 1
+  end
+  object actions: TActionList
+    Left = 688
+    Top = 8
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = dm.qryClientes
+    Left = 95
+    Top = 230
+  end
+end

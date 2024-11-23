@@ -1,0 +1,84 @@
+object frmUsuarios: TfrmUsuarios
+  Left = 281
+  Height = 264
+  Top = 127
+  Width = 552
+  Caption = 'Usuários'
+  ClientHeight = 264
+  ClientWidth = 552
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 216
+    Top = 0
+    Width = 552
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Cod.'
+        FieldName = 'codigo'
+      end    
+      item
+        Title.Caption = 'Usuário'
+        Width = 120
+        FieldName = 'usuario'
+      end    
+      item
+        Title.Caption = 'Cargo'
+        Width = 120
+        FieldName = 'cargo'
+      end    
+      item
+        Title.Caption = 'Situação'
+        Width = 96
+        FieldName = 'situacao'
+      end>
+    DataSource = dsDados
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+  end
+  object btnAdicionar: TButton
+    Left = 312
+    Height = 25
+    Top = 224
+    Width = 75
+    Caption = 'Adicionar'
+    OnClick = btnAdicionarClick
+    TabOrder = 1
+  end
+  object btnEditar: TButton
+    Left = 392
+    Height = 25
+    Top = 224
+    Width = 75
+    Caption = 'Editar'
+    OnClick = btnEditarClick
+    TabOrder = 2
+  end
+  object btnFechar: TButton
+    Left = 472
+    Height = 25
+    Top = 224
+    Width = 75
+    Action = actFechar
+    TabOrder = 3
+  end
+  object dsDados: TDataSource
+    DataSet = dm.qryUsuarios
+    Left = 217
+    Top = 52
+  end
+  object actions: TActionList
+    Left = 446
+    Top = 73
+    object actFechar: TAction
+      Caption = 'Fechar'
+      OnExecute = actFecharExecute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+  end
+end

@@ -1,0 +1,109 @@
+object frmNotaVenda: TfrmNotaVenda
+  Left = 562
+  Height = 204
+  Top = 207
+  Width = 448
+  Caption = 'Nota de Venda'
+  ClientHeight = 204
+  ClientWidth = 448
+  LCLVersion = '2.2.0.4'
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 33
+    Caption = 'Fatura'
+  end
+  object edtFatura: TEdit
+    Left = 112
+    Height = 23
+    Top = 8
+    Width = 80
+    Enabled = False
+    TabStop = False
+    TabOrder = 0
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 15
+    Top = 40
+    Width = 37
+    Caption = 'Cliente'
+  end
+  object edtClienteNome: TEdit
+    Left = 112
+    Height = 23
+    Top = 40
+    Width = 304
+    Enabled = False
+    TabStop = False
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 112
+    Width = 77
+    Caption = 'Nota de Venda'
+  end
+  object edtNotaVenda: TEdit
+    Left = 112
+    Height = 23
+    Top = 112
+    Width = 80
+    OnKeyPress = edtNotaVendaKeyPress
+    TabOrder = 2
+  end
+  object btnFechar: TButton
+    Left = 360
+    Height = 25
+    Top = 168
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 3
+  end
+  object qryNotaVenda: TZQuery
+    Connection = dm.conn
+    SQL.Strings = (
+      'update FATURAS'
+      'set NOTA_VENDA=:NOTA_VENDA'
+      'where FATURA=:FATURA'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'NOTA_VENDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end>
+    Left = 240
+    Top = 104
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'NOTA_VENDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end>
+  end
+  object actions: TActionList
+    Left = 392
+    Top = 16
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+  end
+end

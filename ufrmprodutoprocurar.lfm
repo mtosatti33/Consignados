@@ -1,0 +1,61 @@
+object frmProdutoProcurar: TfrmProdutoProcurar
+  Left = 120
+  Height = 299
+  Top = 103
+  Width = 569
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Procurar Produto'
+  ClientHeight = 299
+  ClientWidth = 569
+  LCLVersion = '2.2.0.4'
+  object grid: TDBGrid
+    Left = 8
+    Height = 252
+    Top = 8
+    Width = 552
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Cód'
+        Width = 70
+        FieldName = 'CODIGO'
+      end    
+      item
+        Title.Caption = 'Produto'
+        Width = 240
+        FieldName = 'PRODUTO'
+      end>
+    DataSource = dsDados
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    OnDblClick = gridDblClick
+    OnKeyDown = gridKeyDown
+    OnKeyPress = gridKeyPress
+  end
+  object btnFechar: TButton
+    Left = 485
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 1
+  end
+  object actions: TActionList
+    Left = 528
+    Top = 8
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = dm.qryProdutos
+    Left = 48
+    Top = 208
+  end
+end

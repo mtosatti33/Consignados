@@ -1,0 +1,144 @@
+object frmUsuarioEditar: TfrmUsuarioEditar
+  Left = 281
+  Height = 329
+  Top = 127
+  Width = 537
+  Caption = 'Cadastrar/Editar Usuário'
+  ClientHeight = 329
+  ClientWidth = 537
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object GroupBox1: TGroupBox
+    Left = 24
+    Height = 264
+    Top = 24
+    Width = 504
+    ClientHeight = 244
+    ClientWidth = 500
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 48
+      Height = 15
+      Top = 24
+      Width = 39
+      Caption = 'Código'
+    end
+    object Label2: TLabel
+      Left = 48
+      Height = 15
+      Top = 56
+      Width = 40
+      Caption = 'Usuário'
+    end
+    object edtCod: TEdit
+      Left = 112
+      Height = 23
+      Top = 24
+      Width = 80
+      OnExit = edtCodExit
+      OnKeyPress = edtCodKeyPress
+      TabOrder = 0
+    end
+    object edtNome: TEdit
+      Left = 112
+      Height = 23
+      Top = 56
+      Width = 312
+      CharCase = ecUppercase
+      OnKeyPress = edtCodKeyPress
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 48
+      Height = 15
+      Top = 88
+      Width = 32
+      Caption = 'Cargo'
+    end
+    object Label4: TLabel
+      Left = 48
+      Height = 15
+      Top = 120
+      Width = 32
+      Caption = 'Senha'
+    end
+    object Label5: TLabel
+      Left = 48
+      Height = 15
+      Top = 152
+      Width = 45
+      Caption = 'Situação'
+    end
+    object cmbCargo: TComboBox
+      Left = 112
+      Height = 23
+      Top = 88
+      Width = 168
+      ItemHeight = 15
+      Items.Strings = (
+        'ADMINISTRADOR'
+        'DIRETOR'
+        'GERENTE'
+        'USUARIO'
+      )
+      OnKeyPress = edtCodKeyPress
+      TabOrder = 2
+    end
+    object edtSenha: TEdit
+      Left = 112
+      Height = 23
+      Top = 120
+      Width = 80
+      EchoMode = emPassword
+      Enabled = False
+      OnKeyPress = edtCodKeyPress
+      PasswordChar = '*'
+      TabOrder = 3
+    end
+    object cmbSituacao: TComboBox
+      Left = 112
+      Height = 23
+      Top = 152
+      Width = 168
+      ItemHeight = 15
+      Items.Strings = (
+        'ATIVO'
+        'INATIVO'
+      )
+      OnKeyPress = edtCodKeyPress
+      TabOrder = 4
+    end
+  end
+  object btnSalvar: TButton
+    Left = 373
+    Height = 25
+    Top = 296
+    Width = 75
+    Caption = 'Salvar'
+    OnClick = btnSalvarClick
+    TabOrder = 1
+  end
+  object btnFechar: TButton
+    Left = 453
+    Height = 25
+    Top = 296
+    Width = 75
+    Action = actFechar
+    TabOrder = 2
+  end
+  object actions: TActionList
+    Left = 468
+    Top = 192
+    object actFechar: TAction
+      Caption = 'Fechar'
+      OnExecute = actFecharExecute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+    object actLimpar: TAction
+      Caption = 'Limpar'
+      OnExecute = actLimparExecute
+    end
+  end
+end

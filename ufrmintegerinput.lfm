@@ -1,0 +1,37 @@
+object frmIntegerInput: TfrmIntegerInput
+  Left = 164
+  Height = 86
+  Top = 207
+  Width = 487
+  Caption = 'Codigo'
+  ClientHeight = 86
+  ClientWidth = 487
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object Label1: TLabel
+    Left = 48
+    Height = 15
+    Top = 16
+    Width = 39
+    Caption = 'Código'
+  end
+  object edtCampo: TEdit
+    Left = 160
+    Height = 23
+    Top = 16
+    Width = 283
+    AutoSelect = False
+    CharCase = ecUppercase
+    OnKeyPress = edtCampoKeyPress
+    TabOrder = 0
+  end
+  object btnOK: TButton
+    Left = 368
+    Height = 25
+    Top = 48
+    Width = 75
+    Caption = 'OK'
+    OnClick = btnOKClick
+    TabOrder = 1
+  end
+end

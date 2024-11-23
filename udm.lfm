@@ -1,0 +1,868 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 505
+  HorizontalOffset = 258
+  VerticalOffset = 102
+  Width = 973
+  object conn: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Port = 0
+    Protocol = 'sqlite-3'
+    Left = 32
+    Top = 16
+  end
+  object qryFaturas: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURAS a'
+      'where a.cliente_nome like :CLIENTE and a.situacao=''PENDENTE'''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE'
+        ParamType = ptUnknown
+      end>
+    Left = 112
+    Top = 16
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFatura: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURAS a'
+      'where a.FATURA=:FATURA'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'FATURA'
+        ParamType = ptUnknown
+      end>
+    Left = 112
+    Top = 88
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'FATURA'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturaItensAdd: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'insert or replace into FATURA_ITENS('
+      '  fatura, '
+      '  produto, '
+      '  qtde_enviada, '
+      '  qtde_retornada,'
+      '  valor_unit)'
+      '  values('
+      '  :fatura, '
+      '  :produto, '
+      '  :qtde_enviada, '
+      '  :qtde_retornada,'
+      '  :valor_unit)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_enviada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_retornada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_unit'
+        ParamType = ptUnknown
+      end>
+    Left = 240
+    Top = 160
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_enviada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_retornada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_unit'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturaAdd: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'insert into faturas('
+      '  fatura,'
+      '  nota_venda,'
+      '  estorno,'
+      '  dt_emissao,'
+      '  cliente,'
+      '  valor_fatura,'
+      '  valor_retornado,'
+      '  situacao,'
+      '  obs)'
+      ' values('
+      '  :fatura,'
+      '  :nota_venda,'
+      '  :estorno,'
+      '  :dt_emissao,'
+      '  :cliente,'
+      '  :valor_fatura,'
+      '  :valor_retornado,'
+      '  :situacao,'
+      '  :obs)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'FATURA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nota_venda'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estorno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dt_emissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_retornado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obs'
+        ParamType = ptUnknown
+      end>
+    Left = 112
+    Top = 160
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'FATURA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nota_venda'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estorno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dt_emissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_retornado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obs'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryProduto: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select PRODUTO FROM PRODUTOS WHERE codigo=:codigo'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end>
+    Left = 432
+    Top = 80
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryCliente: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select CLIENTE FROM CLIENTES WHERE codigo=:codigo'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end>
+    Left = 600
+    Top = 80
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryProdutos: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select * FROM PRODUTOS WHERE produto like :produto'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+    Left = 432
+    Top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryClientes: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select * FROM CLIENTES WHERE cliente LIKE :cliente'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end>
+    Left = 600
+    Top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturaItem: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURA_ITENS a'
+      'where a.fatura=:fatura and a.PRODUTO=:produto'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+    Left = 240
+    Top = 88
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturaItensUpdate: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'UPDATE FATURA_ITENS'
+      ' set  qtde_enviada=:qtde_enviada, '
+      '  qtde_retornada=:qtde_retornada,'
+      '  valor_unit=:valor_unit'
+      '  where fatura=:fatura '
+      ' and produto=:produto '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_enviada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_retornada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_unit'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+    Left = 240
+    Top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_enviada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'qtde_retornada'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_unit'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturaItens: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURA_ITENS a'
+      'where a.fatura=:fatura'
+      'order by a.produto_nome'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end>
+    MasterFields = 'FATURA'
+    MasterSource = frmReport.dsFatura
+    LinkedFields = 'FATURA'
+    Left = 240
+    Top = 16
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'fatura'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturasSemEstorno: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURAS a'
+      'where a.ESTORNO=0'
+    )
+    Params = <>
+    Left = 112
+    Top = 304
+  end
+  object qryProdutoAdd: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'insert into PRODUTOS(codigo,produto) values(:codigo,:produto)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+    Left = 432
+    Top = 144
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'produto'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryClienteAdd: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'insert into clientes(codigo,cliente) values(:codigo,:cliente)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end>
+    Left = 600
+    Top = 144
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryUsuarios: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select * from usuarios'
+    )
+    Params = <>
+    Left = 904
+    Top = 16
+  end
+  object qryUsuarioLogin: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select * from usuarios where usuario=:usuario'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end>
+    Left = 800
+    Top = 88
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturasPendentes: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURAS a'
+      'where a.SITUACAO=''PENDENTE'''
+    )
+    Params = <>
+    Left = 112
+    Top = 368
+  end
+  object qryFaturasTodas: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'SELECT * FROM VW_FATURAS a'
+      'where a.cliente_nome like :CLIENTE'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE'
+        ParamType = ptUnknown
+      end>
+    Left = 112
+    Top = 440
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'CLIENTE'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryUsuarioAdd: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'insert into USUARIOS(USUARIO,CARGO,SENHA,SITUACAO) values(:USUARIO,:CARGO,:SENHA,:SITUACAO)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CARGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SENHA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SITUACAO'
+        ParamType = ptUnknown
+      end>
+    Left = 904
+    Top = 208
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CARGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SENHA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SITUACAO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryUsuarioUpdate: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'update USUARIOS'
+      'set SENHA=:SENHA,'
+      'CARGO=:CARGO,'
+      'SITUACAO=:SITUACAO'
+      'where CODIGO=:CODIGO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'SENHA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CARGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SITUACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+      end>
+    Left = 904
+    Top = 264
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'SENHA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CARGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SITUACAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturaUpdate: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'update faturas set'
+      '  nota_venda=:nota_venda,'
+      '  estorno=:estorno,'
+      '  dt_emissao=:dt_emissao,'
+      '  cliente=:cliente,'
+      '  valor_fatura=:valor_fatura,'
+      '  valor_retornado=:valor_retornado,'
+      '  situacao=:situacao,'
+      '  obs=:obs'
+      '  where fatura=:fatura'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'nota_venda'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estorno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dt_emissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_retornado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obs'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FATURA'
+        ParamType = ptUnknown
+      end>
+    Left = 112
+    Top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'nota_venda'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'estorno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dt_emissao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_fatura'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valor_retornado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obs'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FATURA'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFaturasLogUpdate: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'update faturas_log set '
+      'tipo=:tipo,'
+      'situacao=:situacao, '
+      'usuario=:usuario'
+      'where codigo=(select max(codigo) from faturas_log)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'tipo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end>
+    Left = 896
+    Top = 360
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'tipo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'situacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryUsuario: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select * from usuarios where codigo=:codigo'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end>
+    Left = 904
+    Top = 144
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryUsuariosLogin: TZQuery
+    Connection = conn
+    SQL.Strings = (
+      'select * from usuarios WHERE situacao = ''ATIVO'''
+    )
+    Params = <>
+    Left = 800
+    Top = 16
+  end
+end

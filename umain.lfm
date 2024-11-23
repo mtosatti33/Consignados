@@ -1,0 +1,509 @@
+object frmMain: TfrmMain
+  Left = 304
+  Height = 622
+  Top = 97
+  Width = 813
+  Caption = 'Controle de Consignados'
+  ClientHeight = 602
+  ClientWidth = 813
+  Menu = mainMenu
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+  object btnFaturaProcurar: TSpeedButton
+    Left = 192
+    Height = 23
+    Top = 16
+    Width = 23
+    Caption = '...'
+    OnClick = btnFaturaProcurarClick
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 16
+    Width = 33
+    Caption = 'Fatura'
+  end
+  object edtFatura: TEdit
+    Left = 112
+    Height = 23
+    Top = 16
+    Width = 80
+    OnKeyDown = edtFaturaKeyDown
+    OnKeyPress = edtFaturaKeyPress
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 48
+    Width = 86
+    Caption = 'Data de Emissão'
+  end
+  object Label4: TLabel
+    Left = 224
+    Height = 15
+    Top = 48
+    Width = 37
+    Caption = 'Cliente'
+  end
+  object edtClienteNome: TEdit
+    Left = 432
+    Height = 23
+    Top = 48
+    Width = 312
+    Enabled = False
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 5
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 15
+    Top = 112
+    Width = 45
+    Caption = 'Situação'
+  end
+  object edtSit: TEdit
+    Left = 112
+    Height = 23
+    Top = 112
+    Width = 104
+    Enabled = False
+    TabStop = False
+    TabOrder = 8
+  end
+  object btnClienteProcurar: TSpeedButton
+    Left = 400
+    Height = 24
+    Top = 47
+    Width = 23
+    Caption = '...'
+    Enabled = False
+    OnClick = btnClienteProcurarClick
+  end
+  object Label6: TLabel
+    Left = 16
+    Height = 15
+    Top = 80
+    Width = 54
+    Caption = 'Valor Total'
+  end
+  object edtVlrTotal: TEdit
+    Left = 112
+    Height = 23
+    Top = 80
+    Width = 80
+    OnKeyPress = edtFaturaKeyPress
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 6
+    Text = '0'
+  end
+  object Label7: TLabel
+    Left = 224
+    Height = 15
+    Top = 80
+    Width = 84
+    Caption = 'Valor Retornado'
+  end
+  object edtVlrRet: TEdit
+    Left = 320
+    Height = 23
+    Top = 80
+    Width = 80
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 7
+    Text = '0'
+  end
+  object BtnEfetivar: TButton
+    Left = 568
+    Height = 25
+    Top = 552
+    Width = 75
+    Caption = 'Efe&tivar'
+    Enabled = False
+    OnClick = BtnEfetivarClick
+    TabOrder = 11
+  end
+  object BtnImprimir: TButton
+    Left = 646
+    Height = 25
+    Top = 552
+    Width = 75
+    Caption = 'Im&primir'
+    Enabled = False
+    OnClick = BtnImprimirClick
+    TabOrder = 12
+  end
+  object BtnSair: TButton
+    Left = 725
+    Height = 25
+    Top = 552
+    Width = 75
+    Caption = '&Sair'
+    OnClick = BtnSairClick
+    TabOrder = 13
+  end
+  object edtClienteCod: TEdit
+    Left = 320
+    Height = 23
+    Top = 48
+    Width = 80
+    Enabled = False
+    OnChange = edtClienteCodChange
+    OnKeyDown = edtClienteCodKeyDown
+    OnKeyPress = edtFaturaKeyPress
+    TabOrder = 4
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 400
+    Top = 144
+    Width = 800
+    Caption = 'Itens'
+    ClientHeight = 380
+    ClientWidth = 796
+    TabOrder = 9
+    object grid: TDBGrid
+      Left = 8
+      Height = 256
+      Top = 32
+      Width = 784
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Cód.'
+          Width = 70
+          FieldName = 'PRODUTO'
+        end      
+        item
+          Title.Caption = 'Produto'
+          Width = 300
+          FieldName = 'produto_nome'
+        end      
+        item
+          Title.Caption = 'Valor Un.'
+          Width = 70
+          FieldName = 'VALOR_UNIT'
+          DisplayFormat = '####.#0'
+        end      
+        item
+          Title.Caption = 'Valor Total'
+          Width = 70
+          FieldName = 'valor_produto'
+          DisplayFormat = '####.#0'
+        end      
+        item
+          Title.Caption = 'Qtde Env.'
+          Width = 70
+          FieldName = 'QTDE_ENVIADA'
+          DisplayFormat = '####.##0'
+        end      
+        item
+          Title.Caption = 'Qtde. Ret.'
+          Width = 70
+          FieldName = 'QTDE_RETORNADA'
+          DisplayFormat = '####.##0'
+        end      
+        item
+          Font.Style = [fsBold]
+          Title.Caption = 'Qtde. a Cobrar'
+          Width = 84
+          FieldName = 'saldo'
+          DisplayFormat = '####.##0'
+        end>
+      DataSource = dsDados
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 1
+      OnDblClick = gridDblClick
+      OnKeyDown = gridKeyDown
+    end
+    object BtnAdd: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 0
+      Width = 80
+      Caption = 'Adicionar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000006633000564461466624413AB624512A6624512A66244
+        13AB634411647F3F000400000000000000000000000000000000000000000000
+        0000000000005F3F1518624412B2634512555555000300000000000000005555
+        000363461157634512B163421617000000000000000000000000000000000000
+        000066330005624412B25F470F2000000000000000006644110F6644110F0000
+        00000000000064450F21634512B17F3F00040000000000000000000000000000
+        000063451367644512540000000000000000000000006344135A6344135A0000
+        0000000000000000000063461157634411640000000000000000000000000000
+        0000624413AB7F7F00020000000000000000000000006344135A6344135A0000
+        0000000000000000000055550003624413AB0000000000000000000000000000
+        0000624512A6000000006644110F6344135A6344135A63441494634414946344
+        135A6344135A6644110F00000000624512A60000000000000000000000000000
+        0000624512A6000000006644110F6344135A6344135A63441494634414946344
+        135A6344135A6644110F00000000634412A70000000000000000000000000000
+        0000624413AB7F7F00020000000000000000000000006344135A6344135A0000
+        0000000000000000000055550003624413AB0000000000000000000000000000
+        000062441368624312530000000000000000000000006344135A6344135A0000
+        0000000000000000000063451255644614660000000000000000000000000000
+        000066330005624412B35F470F2000000000000000006644110F6644110F0000
+        0000000000005F470F20624412B2663300050000000000000000000000000000
+        00000000000066471419624412B3624312537F7F000200000000000000007F7F
+        000264451254624412B25F3F1518000000000000000000000000000000000000
+        000000000000000000006633000562441368634513AC624512A5624512A56345
+        13AC634513676633000500000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      OnClick = BtnAddClick
+      TabOrder = 0
+      Visible = False
+    end
+    object Label11: TLabel
+      Left = 8
+      Height = 15
+      Top = 296
+      Width = 24
+      Caption = 'Obs.'
+    end
+    object edtObs: TEdit
+      Left = 8
+      Height = 23
+      Top = 320
+      Width = 784
+      TabOrder = 2
+    end
+  end
+  object edtEstorno: TEdit
+    Left = 320
+    Height = 23
+    Top = 16
+    Width = 80
+    Enabled = False
+    TabStop = False
+    TabOrder = 1
+    Text = '0'
+  end
+  object Label3: TLabel
+    Left = 224
+    Height = 15
+    Top = 16
+    Width = 40
+    Caption = 'Estorno'
+  end
+  object Label8: TLabel
+    Left = 432
+    Height = 15
+    Top = 16
+    Width = 77
+    Caption = 'Nota de Venda'
+  end
+  object edtNotaVenda: TEdit
+    Left = 528
+    Height = 23
+    Top = 16
+    Width = 80
+    Enabled = False
+    TabStop = False
+    TabOrder = 2
+    Text = '0'
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 579
+    Width = 813
+    Panels = <    
+      item
+        Width = 150
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object btnModificar: TButton
+    Left = 376
+    Height = 25
+    Top = 552
+    Width = 75
+    Caption = 'Mo&dificar'
+    OnClick = btnModificarClick
+    TabOrder = 10
+  end
+  object dtpEmissao: TDateTimePicker
+    Left = 112
+    Height = 23
+    Top = 47
+    Width = 83
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 3
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44652
+    Time = 0.281285277778807
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+    OnKeyPress = edtFaturaKeyPress
+  end
+  object Label9: TLabel
+    Left = 432
+    Height = 15
+    Top = 80
+    Width = 75
+    Caption = 'Valor Cobrado'
+  end
+  object edtVlrCobrado: TEdit
+    Left = 528
+    Height = 23
+    Top = 80
+    Width = 80
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 15
+    Text = '0'
+  end
+  object Label10: TLabel
+    Left = 624
+    Height = 15
+    Top = 80
+    Width = 20
+    Caption = 'Pct.'
+  end
+  object edtPct: TEdit
+    Left = 664
+    Height = 23
+    Top = 80
+    Width = 80
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 16
+    Text = '0'
+  end
+  object btnRetornoTotal: TButton
+    Left = 456
+    Height = 25
+    Top = 552
+    Width = 107
+    Caption = '&Retorno Total'
+    Enabled = False
+    OnClick = btnRetornoTotalClick
+    TabOrder = 17
+  end
+  object dsDados: TDataSource
+    DataSet = dm.qryFaturaItens
+    Left = 40
+    Top = 352
+  end
+  object dsDados2: TDataSource
+    Left = 99
+    Top = 352
+  end
+  object actions: TActionList
+    Left = 756
+    Top = 36
+    object actSair: TAction
+      Caption = 'actSair'
+      OnExecute = actSairExecute
+      SecondaryShortCuts.Strings = (
+        'Esc'
+      )
+    end
+    object actProcurar: TAction
+      Caption = 'actProcurar'
+      OnExecute = actProcurarExecute
+      ShortCut = 115
+    end
+  end
+  object mainMenu: TMainMenu
+    Left = 712
+    Top = 8
+    object MenuItem1: TMenuItem
+      Caption = 'Aplicação'
+      object mnuItemSair: TMenuItem
+        Caption = 'Sair'
+        OnClick = mnuItemSairClick
+      end
+    end
+    object mnuItemCad: TMenuItem
+      Caption = 'Cadastros'
+      Visible = False
+      object mnuItemCadProdutos: TMenuItem
+        Caption = 'Produtos'
+        OnClick = mnuItemCadProdutosClick
+      end
+      object mnuItemCadClientes: TMenuItem
+        Caption = 'Clientes'
+        OnClick = mnuItemCadClientesClick
+      end
+    end
+    object mnuItemRel: TMenuItem
+      Caption = 'Relatórios'
+      Visible = False
+      object mnuItemRelFatPend: TMenuItem
+        Caption = 'Faturas Pendentes'
+        OnClick = mnuItemRelFatPendClick
+      end
+      object mnuItemRelFatNaoEstorn: TMenuItem
+        Caption = 'Faturas não Estornadas'
+        OnClick = mnuItemRelFatNaoEstornClick
+      end
+      object mnuItemRelFatData: TMenuItem
+        Caption = 'Faturas por Data'
+        OnClick = mnuItemRelFatDataClick
+      end
+    end
+    object mnuItemProcEsp: TMenuItem
+      Caption = 'Processos Especiais'
+      Visible = False
+      object mnuItemEstFat: TMenuItem
+        Caption = 'Atualizar Estorno da Fatura'
+        OnClick = mnuItemEstFatClick
+      end
+      object mnuItemNotaVenda: TMenuItem
+        Caption = 'Atualizar Nota de Venda'
+        OnClick = mnuItemNotaVendaClick
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Administração'
+      object mnuItemAtualizarBanco: TMenuItem
+        Caption = 'Atualizar o Banco de Dados'
+        Visible = False
+        OnClick = mnuItemAtualizarBancoClick
+      end
+      object mnuItemUsuarios: TMenuItem
+        Caption = 'Usuarios'
+        object mnuItemUsuariosManut: TMenuItem
+          Caption = 'Manutenção'
+          Visible = False
+          OnClick = mnuItemUsuariosManutClick
+        end
+        object Separator1: TMenuItem
+          Caption = '-'
+        end
+        object mnuItemAlterarSenha: TMenuItem
+          Caption = 'Alterar Senha'
+          OnClick = mnuItemAlterarSenhaClick
+        end
+      end
+    end
+  end
+end
